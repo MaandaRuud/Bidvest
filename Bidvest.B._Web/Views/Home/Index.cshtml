@@ -1,0 +1,35 @@
+﻿@{
+    ViewData["Title"] = "Home";
+    List<Bidvest.C.Models.Employee> employees = (List<Bidvest.C.Models.Employee>)ViewBag.employees;
+}
+
+    <h1 class="display-4">Welcome</h1>
+    <div class="text-center">
+        <div class="row">
+            <div class="col-12 table-responsive-md">
+                <table class="table table-striped">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Id</th>
+                            <th>Firstname</th>
+                            <th>Surname</th>
+                            <th>Gender</th>
+                            <th>IP Address</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var employee in employees)
+                        {
+                            <tr>
+                                <td>@employee.Id</td>
+                                <td>@employee.Firstname</td>
+                                <td>@employee.Surname</td>
+                                <td>@employee.Gender</td>
+                                <td>@employee.IPAddress</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
